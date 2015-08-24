@@ -29,7 +29,7 @@ The following properties can be applied on top of the [common Tabris.js properti
 #### change:date
 
 ##### Parameter
-* `widget`: _Calendar_
+* `widget`: _ESCalendar_
  * The widget the event happend on
 * `date` : _String_
  * The new date as a unix timestamp in milliseconds
