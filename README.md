@@ -32,7 +32,7 @@ The Tabris.js project provides documentation on [how to use Cordova plugins](htt
 
 ## Example
 
-The following snippet how the widget can be used in an app:
+The following snippet shows how the widget can be used in an app:
 
 ```javascript
 var page = tabris.create("Page", {
