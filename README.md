@@ -15,7 +15,11 @@ The Tabris.js project provides documentation on [how to use Cordova plugins](htt
 
 ## API
 
+Widget name: `ESCalendar`
+
 ### Properties
+
+The following properties can be applied on top of the [common Tabris.js properties](https://tabrisjs.com/documentation/latest/api/Widget#properties):
 
 * `date` : _String_
  * The currently selected date as a unix timestamp in milliseconds
