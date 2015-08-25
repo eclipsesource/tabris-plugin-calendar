@@ -72,9 +72,9 @@ Compatible with [Tabris.js 1.2.0](https://github.com/eclipsesource/tabris-js/rel
 
  * tabris-android
 
-## Development
+## Development of the widget
 
-While not required by the cordova build, this repository provides a `project` folder that contains platform specific development artifacts. These artifacts allow to more easily consume the native source code in the corresponding development environment.
+While not required by the consumer or the widget, this repository provides a `project` folder that contains platform specific development artifacts. These artifacts allow to more easily consume the native source code when developing the native parts of the widget.
 
 ### Android
 
