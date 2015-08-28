@@ -29,6 +29,8 @@
 
         <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarOperator.java"
           target-dir="src/com/eclipsesource/tabris/calendar" />
+        <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarWidgetPropertyHandler.java"
+          target-dir="src/com/eclipsesource/tabris/calendar" />
 
     </platform>
 
