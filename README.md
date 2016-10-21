@@ -23,6 +23,10 @@ The following properties can be applied on top of the [common Tabris.js properti
 
 * `date` : _String_
  * The currently selected date as a unix timestamp in milliseconds
+* `minDate` : _String_
+ * The minimal date as a unix timestamp in milliseconds.  Defaults to January 1 1900
+* `maxDate` : _String_
+ * The maximal date as a unix timestamp in milliseconds.  Defaults to January 1 2100
 
 ### Events
 
