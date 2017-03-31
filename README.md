@@ -1,4 +1,4 @@
-# Tabris.js Calendar Widget
+# Tabris.js Calendar Plugin
 
 A calendar widget for [Tabris.js](https://tabrisjs.com), allowing to show and pick a date. Currently only Android is supported.
 
@@ -15,6 +15,7 @@ new escalendar.Calendar({
 }).on('change:date', ({value: date}) => console.log(date))
   .appendTo(tabris.ui.contentView);
 ```
+A more elaborate example can be found in the [example](example/) folder. It provides a Tabris.js project that demonstrates the various features of the `tabris-plugin-calendar` widget. Consult the examples [README.md](example/README.md) on build instructions.
 
 ## Integrating the plugin
 Using the plugin follows the standard cordova plugin mechanism. The Tabris.js website provides detailed information on how to [integrate custom widgets](https://tabrisjs.com/documentation/latest/build#adding-plugins) in your Tabris.js app. To add the plugin to your app add the following entry in your apps `config.xml`:
