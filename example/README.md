@@ -1,4 +1,4 @@
-# Tabris.js Maps Example
+# Tabris.js Calendar Example
 
 ## Prerequisites
 
