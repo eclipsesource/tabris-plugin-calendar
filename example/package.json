@@ -1,0 +1,8 @@
+{
+  "title": "Tabris Calendar Example",
+  "description": "Example for the Tabris calendar plugin.",
+  "main": "src/app.js",
+  "dependencies": {
+    "tabris": "https://tabrisjs.com/downloads/nightly-2.x/tabris.tgz"
+  }
+}

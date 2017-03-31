@@ -1,76 +1,56 @@
 # Tabris.js Calendar Widget
 
-A custom calendar widget for [Tabris.js](https://tabrisjs.com).
-
-The widget provides basic support to show and pick a date.
+A calendar widget for [Tabris.js](https://tabrisjs.com), allowing to show and pick a date. Currently only Android is supported.
 
 ![Calendar widget on Android](assets/screenshots/calendar-widget-android.png)
-## Plugin dependency
 
-The Tabris.js project provides documentation on [how to use Cordova plugins](https://tabrisjs.com/documentation/latest/build#adding-plugins) in your projects. To include this calendar plugin you have to add a `<plugin>` element to your projects `config.xml`:
+## Example
+
+The following snippet shows how the `tabris-plugin-calendar` plugin can be used in a Tabris.js app:
+
+```javascript
+new escalendar.Calendar({
+  left: 0, right: 0, top: 0, bottom: 0,
+  date: 946684800000 // year 2000
+}).on('change:date', ({value: date}) => console.log(date))
+  .appendTo(tabris.ui.contentView);
+```
+
+## Integrating the plugin
+Using the plugin follows the standard cordova plugin mechanism. The Tabris.js website provides detailed information on how to [integrate custom widgets](https://tabrisjs.com/documentation/latest/build#adding-plugins) in your Tabris.js app. To add the plugin to your app add the following entry in your apps `config.xml`:
 
 ```xml
-<plugin name="https://github.com/eclipsesource/tabris-calendar.git" />
+<plugin name="tabris-plugin-calendar" spec="https://github.com/eclipsesource/tabris-plugin-maps" />
 ```
 
 ## API
 
-Widget name: `ESCalendar`
+The wiget api consists of the object `escalendar.Calendar` with the following properties and events.
 
 ### Properties
 
 The following properties can be applied on top of the [common Tabris.js properties](https://tabrisjs.com/documentation/latest/api/Widget#properties):
 
-* `date` : _String_
- * The currently selected date as a unix timestamp in milliseconds
-* `minDate` : _String_
- * The minimal date as a unix timestamp in milliseconds.  Defaults to January 1 1900
-* `maxDate` : _String_
- * The maximal date as a unix timestamp in milliseconds.  Defaults to January 1 2100
-
+* `date` : _number_
+  * The currently selected date as a unix timestamp in milliseconds
+* `minDate` : _number_
+  * The minimum date as a unix timestamp in milliseconds.  Defaults to January 1 1900
+* `maxDate` : _number_
+  * The maximum date as a unix timestamp in milliseconds.  Defaults to January 1 2100
+  
 ### Events
 
 #### change:date
 
-##### Parameter
-* `widget`: _ESCalendar_
- * The widget the event happend on
-* `date` : _String_
- * The new date as a unix timestamp in milliseconds
+The `change:date` is fired when a user selects a date in the calendar widget.
 
-## Example
-
-The following snippet shows how the widget can be used in an app:
-
-```javascript
-var page = tabris.create("Page", {
-  title: "Calendar Widget",
-  topLevel: true
-});
-
-tabris.create("Button", {
-  id: "button",
-  text: "Get Date",
-  layoutData: {left: 16, right: 16, bottom: 16}
-}).on("select", function() {
-  var date = page.children("#calendar").get("date");
-  console.log("date: " + new Date(parseInt(date)).toUTCString());
-}).appendTo(page);
-
-tabris.create("ESCalendar", {
-  id: "calendar",
-  date: new Date("October 13, 2014").getTime(),
-  layoutData: {left: 0, right: 0, top: 0, bottom: "#button 16"}
-}).on("change:date", function(widget, date) {
-  console.log(new Date(parseInt(date)).toUTCString());
-}).appendTo(page);
-
-page.open();
-```
+##### Event parameter
+* `event.value`: _number_
+  * The new date as a unix timestamp in milliseconds
 
 ## Compatibility
 
-Compatible with [Tabris.js 1.2.0](https://github.com/eclipsesource/tabris-js/releases/tag/v1.2.0)
+Compatible with [Tabris.js 2.0.0](https://github.com/eclipsesource/tabris-js/releases/tag/v2.0.0)
 
 ### Supported platforms
 
@@ -84,10 +64,10 @@ While not required by the consumer or the widget, this repository provides a `pr
 
 The project provides a gradle based build configuration, which also allows to import the project into Android Studio.
 
-In order to reference the Tabris.js specific APIs, the environment variable `TABRIS_ANDROID_CORDOVA_PLATFORM` has to point to the Tabris.js Android Cordova platform root directory.
+In order to reference the Tabris.js specific APIs, the environment variable `TABRIS_ANDROID_PLATFORM` has to point to the Tabris.js Android Cordova platform root directory.
 
 ```bash
-export TABRIS_ANDROID_CORDOVA_PLATFORM=/home/user/tabris-android-cordova
+export TABRIS_ANDROID_PLATFORM=/home/user/tabris-android-cordova
 ```
  The environment variable is consumed in the gradle projects [build.gradle](project/android/build.gradle) file.
 

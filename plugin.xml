@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="com.eclipsesource.tabris.calendar"
+        id="tabris-plugin-calendar"
         version="1.0.0">
 
-    <name>Tabris.js Calendar Widget</name>
 
-    <description>A calendar widget for Tabris.js</description>
+  <name>Tabris.js Calendar Plugin</name>
+  <description>A calendar widget for Tabris.js</description>
+  <author>EclipseSource</author>
+  <license>Revised BSD License (3-clause license)</license>
+  <repo>https://github.com/eclipsesource/tabris-plugin-calendar.git</repo>
+  <issue>https://github.com/eclipsesource/tabris-plugin-calendar/issues</issue>
 
-    <author>EclipseSource</author>
+  <!-- cordova -->
+  <engines>
+    <engine name="cordova" version=">=3.8.0" />
+  </engines>
 
-    <!-- cordova -->
-    <engines>
-        <engine name="cordova" version=">=3.8.0" />
-    </engines>
+  <js-module src="www/Calendar.js" name="calendar">
+    <clobbers target="escalendar.Calendar" />
+  </js-module>
 
-    <js-module src="www/calendar.js" name="calendar">
-      <runs />
-    </js-module>
+  <platform name="android">
 
-    <platform name="android">
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <meta-data
+          android:name="com.eclipsesource.tabris.android.OPERATOR.com.eclipsesource.tabris.calendar"
+          android:value="com.eclipsesource.tabris.calendar.CalendarOperator" />
+    </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <meta-data
-              android:name="com.eclipsesource.tabris.android.OPERATOR.com.eclipsesource.tabris.calendar"
-              android:value="com.eclipsesource.tabris.calendar.CalendarOperator" />
-        </config-file>
+    <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarOperator.java"
+                 target-dir="src/com/eclipsesource/tabris/calendar" />
+    <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarPropertyHandler.java"
+                 target-dir="src/com/eclipsesource/tabris/calendar" />
 
-        <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarOperator.java"
-          target-dir="src/com/eclipsesource/tabris/calendar" />
-        <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarWidgetPropertyHandler.java"
-          target-dir="src/com/eclipsesource/tabris/calendar" />
-
-    </platform>
+  </platform>
 
 </plugin>
