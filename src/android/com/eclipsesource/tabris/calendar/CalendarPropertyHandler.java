@@ -1,4 +1,3 @@
-
 package com.eclipsesource.tabris.calendar;
 
 import android.app.Activity;
@@ -19,50 +18,50 @@ public class CalendarPropertyHandler extends ViewPropertyHandler<CalendarView> {
   private static final String PROP_MIN_DATE = "minDate";
   private static final String PROP_MAX_DATE = "maxDate";
 
-  public CalendarPropertyHandler( Activity activity, TabrisContext tabrisContext ) {
-    super( activity, tabrisContext );
+  public CalendarPropertyHandler(Activity activity, TabrisContext tabrisContext) {
+    super(activity, tabrisContext);
   }
 
   @Override
-  public void set( CalendarView calendarView, Properties properties ) {
-    super.set( calendarView, properties );
-    for( String property : properties.getAll().keySet() ) {
-      switch( property ) {
+  public void set(CalendarView calendarView, Properties properties) {
+    super.set(calendarView, properties);
+    for (String property : properties.getAll().keySet()) {
+      switch (property) {
         case PROP_DATE:
-          calendarView.setDate( Long.parseLong( properties.getString( PROP_DATE ) ), true, false );
+          calendarView.setDate(Long.parseLong(properties.getString(PROP_DATE)), true, false);
           break;
         case PROP_MIN_DATE:
-          calendarView.setMinDate( Long.parseLong( properties.getString( PROP_MIN_DATE ) ) );
+          calendarView.setMinDate(Long.parseLong(properties.getString(PROP_MIN_DATE)));
           break;
         case PROP_MAX_DATE:
-          calendarView.setMaxDate( Long.parseLong( properties.getString( PROP_MAX_DATE ) ) );
+          calendarView.setMaxDate(Long.parseLong(properties.getString(PROP_MAX_DATE)));
           break;
       }
     }
   }
 
   @Override
-  public Object get( CalendarView calendarView, String property ) {
-    switch( property ) {
+  public Object get(CalendarView calendarView, String property) {
+    switch (property) {
       case PROP_DATE:
-        return timestampToUtcMidnight( calendarView.getDate() );
+        return timestampToUtcMidnight(calendarView.getDate());
       case PROP_MIN_DATE:
-        return timestampToUtcMidnight( calendarView.getMinDate() );
+        return timestampToUtcMidnight(calendarView.getMinDate());
       case PROP_MAX_DATE:
-        return timestampToUtcMidnight( calendarView.getMaxDate() );
+        return timestampToUtcMidnight(calendarView.getMaxDate());
     }
-    return super.get( calendarView, property );
+    return super.get(calendarView, property);
   }
 
   @NonNull
-  private Object timestampToUtcMidnight( long timestamp ) {
-    GregorianCalendar date = new GregorianCalendar( TimeZone.getTimeZone( "UTC" ) );
-    date.setTimeInMillis( timestamp );
-    date.set( Calendar.HOUR_OF_DAY, 0 );
-    date.set( Calendar.MINUTE, 0 );
-    date.set( Calendar.SECOND, 0 );
-    date.set( Calendar.MILLISECOND, 0 );
-    return String.valueOf( date.getTimeInMillis() );
+  private Object timestampToUtcMidnight(long timestamp) {
+    GregorianCalendar date = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
+    date.setTimeInMillis(timestamp);
+    date.set(Calendar.HOUR_OF_DAY, 0);
+    date.set(Calendar.MINUTE, 0);
+    date.set(Calendar.SECOND, 0);
+    date.set(Calendar.MILLISECOND, 0);
+    return String.valueOf(date.getTimeInMillis());
   }
 
 }
