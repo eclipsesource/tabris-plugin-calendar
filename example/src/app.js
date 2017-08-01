@@ -1,7 +1,7 @@
 let calendar = new escalendar.Calendar({
   left: 0, right: 0, top: 0, bottom: '#controls',
   background: '#fafafa'
-}).on('change:date', ({value: date}) => textView.text = new Date(date).toUTCString())
+}).on('dateChanged', ({value: date}) => textView.text = new Date(date).toUTCString())
   .appendTo(tabris.ui.contentView);
 
 let controls = new tabris.Composite({
@@ -26,13 +26,13 @@ new tabris.Composite({
 new tabris.CheckBox({
   left: 16, right: 16, top: 'prev() 16',
   text: "Limit to 7 days in the past",
-}).on('change:checked', ({value: checked}) => calendar.minDate = checked ? Date.now() - 604800000 : 0)
+}).on('checkedChanged', ({value: checked}) => calendar.minDate = checked ? Date.now() - 604800000 : 0)
   .appendTo(controls);
 
 new tabris.CheckBox({
   left: 16, right: 16, top: 'prev() 16',
   text: "Limit to 7 days in the future",
-}).on('change:checked', ({value: checked}) => calendar.maxDate = checked ? Date.now() + 604800000 : 4099680000000)
+}).on('checkedChanged', ({value: checked}) => calendar.maxDate = checked ? Date.now() + 604800000 : 4099680000000)
   .appendTo(controls);
 
 new tabris.Button({

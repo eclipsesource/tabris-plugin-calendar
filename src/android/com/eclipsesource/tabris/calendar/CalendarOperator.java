@@ -51,7 +51,7 @@ public class CalendarOperator extends AbstractViewOperator<CalendarView> {
       gregorianCalendar.setTimeZone(TimeZone.getTimeZone("UTC"));
       String date = String.valueOf(gregorianCalendar.getTimeInMillis());
       RemoteObject remoteObject = tabrisContext.getObjectRegistry().getRemoteObjectForObject(calendarView);
-      remoteObject.notify("change_date", "date", date);
+      remoteObject.notify("dateChanged", "date", date);
     }
   }
 

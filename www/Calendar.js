@@ -5,15 +5,15 @@ class Calendar extends tabris.Widget {
   }
 
   _listen(name, listening) {
-    if (name === 'change:date') {
-      this._nativeListen('change_date', listening);
+    if (name === 'dateChanged') {
+      this._nativeListen('dateChanged', listening);
     } else {
       super._listen(name, listening);
     }
   }
 
   _trigger(name, event) {
-    if (name === 'change_date') {
+    if (name === 'dateChanged') {
       this._triggerChangeEvent('date', parseInt(event.date));
     } else {
       return super._trigger(name, event);
