@@ -15,13 +15,19 @@ new escalendar.Calendar({
 }).on('change:date', ({value: date}) => console.log(date))
   .appendTo(tabris.ui.contentView);
 ```
-A more elaborate example can be found in the [example](example/) folder. It provides a Tabris.js project that demonstrates the various features of the `tabris-plugin-calendar` widget. Consult the examples [README.md](example/README.md) on build instructions.
+A more elaborate example can be found in the [example](example/) folder. It provides a Tabris.js project that demonstrates the various features of the `tabris-plugin-calendar` widget. Consult the [README](example/README.md) of the example for build instructions.
 
 ## Integrating the plugin
-Using the plugin follows the standard cordova plugin mechanism. The Tabris.js website provides detailed information on how to [integrate custom widgets](https://tabrisjs.com/documentation/latest/build#adding-plugins) in your Tabris.js app. To add the plugin to your app add the following entry in your apps `config.xml`:
+The Tabris.js website provides detailed information on how to [integrate custom widgets](https://tabrisjs.com/documentation/latest/build#adding-plugins) in your Tabris.js app. To add the plugin to your app add the following entry in your apps `config.xml`:
 
 ```xml
-<plugin name="tabris-plugin-calendar" spec="https://github.com/eclipsesource/tabris-plugin-maps" />
+<plugin name="tabris-plugin-calendar" spec="1.0.0" />
+```
+
+To fetch the latest development version use the GitHub URL:
+
+```xml
+<plugin name="tabris-plugin-calendar" spec="https://github.com/eclipsesource/tabris-plugin-calendar.git" />
 ```
 
 ## API
@@ -38,7 +44,7 @@ The following properties can be applied on top of the [common Tabris.js properti
   * The minimum date as a unix timestamp in milliseconds.  Defaults to January 1 1900
 * `maxDate` : _number_
   * The maximum date as a unix timestamp in milliseconds.  Defaults to January 1 2100
-  
+
 ### Events
 
 #### change:date
@@ -55,7 +61,7 @@ Compatible with [Tabris.js 2.0.0](https://github.com/eclipsesource/tabris-js/rel
 
 ### Supported platforms
 
- * tabris-android
+ * Android
 
 ## Development of the widget
 
