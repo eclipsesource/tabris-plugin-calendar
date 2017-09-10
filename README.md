@@ -12,7 +12,7 @@ The following snippet shows how the `tabris-plugin-calendar` plugin can be used 
 new escalendar.Calendar({
   left: 0, right: 0, top: 0, bottom: 0,
   date: 946684800000 // year 2000
-}).on('change:date', ({value: date}) => console.log(date))
+}).on('dateChanged', ({value: date}) => console.log(date))
   .appendTo(tabris.ui.contentView);
 ```
 A more elaborate example can be found in the [example](example/) folder. It provides a Tabris.js project that demonstrates the various features of the `tabris-plugin-calendar` widget. Consult the [README](example/README.md) of the example for build instructions.
