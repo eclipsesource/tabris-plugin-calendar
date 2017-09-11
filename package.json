@@ -1,6 +1,6 @@
 {
   "name": "tabris-plugin-calendar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A calendar widget for Tabris.js",
   "cordova": {
     "id": "tabris-plugin-calendar",
