@@ -21,7 +21,7 @@ A more elaborate example can be found in the [example](example/) folder. It prov
 The Tabris.js website provides detailed information on how to [integrate custom widgets](https://tabrisjs.com/documentation/latest/build#adding-plugins) in your Tabris.js app. To add the plugin to your app add the following entry in your apps `config.xml`:
 
 ```xml
-<plugin name="tabris-plugin-calendar" spec="1.0.0" />
+<plugin name="tabris-plugin-calendar" spec="^1.0.0" />
 ```
 
 To fetch the latest development version use the GitHub URL:
