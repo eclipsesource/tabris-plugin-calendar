@@ -47,9 +47,9 @@ The following properties can be applied on top of the [common Tabris.js properti
 
 ### Events
 
-#### change:date
+#### dateChanged
 
-The `change:date` is fired when a user selects a date in the calendar widget.
+Fired when the user selects a date in the calendar widget.
 
 ##### Event parameter
 * `event.value`: _number_
