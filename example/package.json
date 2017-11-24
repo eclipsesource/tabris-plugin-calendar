@@ -3,6 +3,6 @@
   "description": "Example for the Tabris calendar plugin.",
   "main": "src/app.js",
   "dependencies": {
-    "tabris": "2.0.0"
+    "tabris": "2.1.1"
   }
 }
