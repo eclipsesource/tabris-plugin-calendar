@@ -1,16 +1,18 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 dependencies {
-    compile 'com.eclipsesource.tabris:tabris-android:2.3.0'
+    implementation 'com.eclipsesource.tabris.android:tabris-android:3.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 android {
 
-    compileSdkVersion 26
+    compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 26
+        targetSdkVersion 27
     }
 
     lintOptions {
