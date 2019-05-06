@@ -25,13 +25,19 @@
 
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <meta-data
-          android:name="com.eclipsesource.tabris.android.OPERATOR.com.eclipsesource.tabris.calendar"
-          android:value="com.eclipsesource.tabris.calendar.CalendarOperator" />
+          android:name="com.eclipsesource.tabris.android.HANDLER.com.eclipsesource.tabris.calendar"
+          android:value="com.eclipsesource.tabris.calendar.CalendarHandler" />
     </config-file>
 
-    <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarOperator.java"
+    <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarHandler.kt"
                  target-dir="src/com/eclipsesource/tabris/calendar" />
-    <source-file src="src/android/com/eclipsesource/tabris/calendar/CalendarPropertyHandler.java"
+    <source-file src="src/android/com/eclipsesource/tabris/calendar/DateProperty.kt"
+                 target-dir="src/com/eclipsesource/tabris/calendar" />
+    <source-file src="src/android/com/eclipsesource/tabris/calendar/MaxDateProperty.kt"
+                 target-dir="src/com/eclipsesource/tabris/calendar" />
+    <source-file src="src/android/com/eclipsesource/tabris/calendar/MinDateProperty.kt"
+                 target-dir="src/com/eclipsesource/tabris/calendar" />
+    <source-file src="src/android/com/eclipsesource/tabris/calendar/OnDateChangeListener.kt"
                  target-dir="src/com/eclipsesource/tabris/calendar" />
 
   </platform>
