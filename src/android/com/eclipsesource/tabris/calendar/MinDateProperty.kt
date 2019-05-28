@@ -1,15 +1,15 @@
 package com.eclipsesource.tabris.calendar
 
 import android.widget.CalendarView
-import com.eclipsesource.tabris.android.LongProperty
+import com.eclipsesource.tabris.android.StringProperty
 import java.util.*
 
 @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
-object MinDateProperty : LongProperty<CalendarView>("minDate") {
+object MinDateProperty : StringProperty<CalendarView>("minDate") {
 
-  override fun set(calendarView: CalendarView, date: Long?) {
+  override fun set(calendarView: CalendarView, date: String?) {
     date?.let {
-      calendarView.minDate = it
+      calendarView.minDate = it.toLong()
     }
   }
 
@@ -20,6 +20,6 @@ object MinDateProperty : LongProperty<CalendarView>("minDate") {
         set(Calendar.MINUTE, 0)
         set(Calendar.SECOND, 0)
         set(Calendar.MILLISECOND, 0)
-      }.timeInMillis
+      }.timeInMillis.toString()
 
 }
