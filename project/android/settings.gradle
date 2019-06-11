@@ -1,1 +1,3 @@
 include 'calendar'
+
+rootProject.name = 'tabris-plugin-calendar'
