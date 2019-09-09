@@ -1,6 +1,6 @@
 {
   "name": "tabris-plugin-calendar",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A calendar widget for Tabris.js",
   "cordova": {
     "id": "tabris-plugin-calendar",
@@ -19,12 +19,13 @@
     "tabris.js",
     "calendar"
   ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.8.0"
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova-android": ">=8.0.0"
+      }
     }
-  ],
+  },
   "author": "EclipseSource",
   "license": "Revised BSD License (3-clause license)",
   "bugs": {

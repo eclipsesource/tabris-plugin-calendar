@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns="http://www.w3.org/ns/widgets"
         id="com.eclipsesource.tabris.calendar.example"
-        version="1.0.0"
+        version="2.0.0"
         android-packageName="com.eclipsesource.tabris.calendar.example"
         android-versionCode="1">
   <name>Tabris.js Calendar Plugin Example</name>
   <description>Example for the Tabris.js calendar plugin.</description>
-  <author email="tabris@eclipsesource.com" href="https://tabrisjs.com">EclipseSource</author>
+  <author email="care@tabris.com" href="https://tabrisjs.com">EclipseSource</author>
 
   <preference name="EnableDeveloperConsole" value="true" />
 

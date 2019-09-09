@@ -4,6 +4,10 @@ A calendar widget for [Tabris.js](https://tabrisjs.com), allowing to show and pi
 
 ![Calendar widget on Android](assets/screenshots/calendar-widget-android.png)
 
+## Compatibility
+
+Compatible with [Tabris.js 3.x](https://github.com/eclipsesource/tabris-js/releases/tag/v3.0.0). For [Tabris.js 2.x](https://github.com/eclipsesource/tabris-js/releases/tag/v3.0.0) compatibility see the branch [1.x-tabris-2.x](https://github.com/eclipsesource/tabris-plugin-calendar/tree/1.x-tabris-2.x).
+
 ## Example
 
 The following snippet shows how the `tabris-plugin-calendar` plugin can be used in a Tabris.js app:
@@ -32,7 +36,7 @@ To fetch the latest development version use the GitHub URL:
 
 ## API
 
-The wiget api consists of the object `escalendar.Calendar` with the following properties and events.
+The widget api consists of the object `escalendar.Calendar` with the following properties and events.
 
 ### Properties
 
@@ -54,10 +58,6 @@ Fired when the user selects a date in the calendar widget.
 ##### Event parameter
 * `event.value`: _number_
   * The new date as a unix timestamp in milliseconds
-
-## Compatibility
-
-Compatible with [Tabris.js 2.0.0](https://github.com/eclipsesource/tabris-js/releases/tag/v2.0.0)
 
 ### Supported platforms
 
