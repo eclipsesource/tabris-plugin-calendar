@@ -26,31 +26,31 @@ tabris.NativeObject.defineProperties(Calendar.prototype, {
   'date': {
     type: 'number',
     nocache: true,
-    set(name, value) {
-      this._nativeSet(name, value.toString());
+    encode(value) {
+      return value.toString();
     },
-    get(name) {
-      return parseInt(this._nativeGet(name));
+    decode(value) {
+      return parseInt(value);
     }
   },
   'minDate': {
     type: 'number',
     nocache: true,
-    set(name, value) {
-      this._nativeSet(name, value.toString());
+    encode(value) {
+      return value.toString();
     },
-    get(name) {
-      return parseInt(this._nativeGet(name));
+    decode(value) {
+      return parseInt(value);
     }
   },
   'maxDate': {
     type: 'number',
     nocache: true,
-    set(name, value) {
-      this._nativeSet(name, value.toString());
+    encode(value) {
+      return value.toString();
     },
-    get(name) {
-      return parseInt(this._nativeGet(name));
+    decode(value) {
+      return parseInt(value);
     }
   }
 });
