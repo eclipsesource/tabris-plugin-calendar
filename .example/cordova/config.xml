@@ -9,7 +9,8 @@
   <author email="care@tabris.com" href="https://tabrisjs.com">EclipseSource</author>
 
   <preference name="EnableDeveloperConsole" value="true" />
+  <preference name="UseStrictSSL" value="false" />
 
-  <plugin name="tabris-plugin-calendar" spec="../" />
+  <plugin name="tabris-plugin-calendar" spec="https://github.com/eclipsesource/tabris-plugin-calendar.git" />
 
 </widget>
